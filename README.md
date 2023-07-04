@@ -1,3 +1,3 @@
 # Javascript
 
-A beginner friendly javascript repo with projects to try out.
+A beginner friendly javascript repository with projects to try out.
