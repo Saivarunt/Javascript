@@ -1,4 +1,3 @@
-//Day 1
 // in-line comment
 /*
 multi line comment
@@ -35,7 +34,6 @@ multi line comment
 
 // var sum=10+10;
 // console.log(sum)
-// Day 1 end
 
 // increment and decrement 
 // var myVar=87;
