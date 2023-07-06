@@ -706,3 +706,15 @@ multi line comment
 
 // import * as capitalizeStrings from "./strfunc";
 // import sub from "./strfunc";
+
+//generation of randomcard pulling function
+// let arrayeg=["card1","card2","card3","card4","card5"]
+// let randomcardpull=(arr,reqlen)=>{
+//     let copyarr=arr.copyWithin()
+//     let randcards=[];
+//     for (let i=0;i<reqlen;i++){
+//        randcards.push(...arr.splice(Math.floor(Math.random() * arr.length),1))
+//     }
+//     return randcards
+// };
+// console.log(randomcardpull(arrayeg,2))
