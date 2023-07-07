@@ -704,6 +704,7 @@ multi line comment
 // const cap =capitalizeString("hello!")
 // console.log(cap)
 
+//importing from strfunc.js
 // import * as capitalizeStrings from "./strfunc";
 // import sub from "./strfunc";
 

@@ -1,3 +1,4 @@
+//import export example
 // export const capitalizeString =str=>str.toUpperCase()
 
 // export {capitalizeString};
