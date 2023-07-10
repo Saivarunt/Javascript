@@ -202,38 +202,106 @@
 // error handling with try/catch
 
 
-function getData(){
-    return new Promise(function(resolve,reject){
-        setTimeout(()=>{
-            // resolve("Something went right")
-            reject("Something went wrong")
-        },1)
-    })
-}
-function onSuccess(){
-// Take advantage of success block
-}
-function onError(){
-// Take advantage of failure block
-}
-
-async function start(){
-    try{
-    const result=await getData()
-    // onSuccess()
-    console.log(result)
-}catch (error){
-    // onError()
-    console.log(`Error ${error}`)
-}
-}
-start()
-
-// async function start1(){
-//     const result=await getData()
-//     .catch(error=>{
-//         console.log(`Error ${error}`)
+// function getData(){
+//     return new Promise(function(resolve,reject){
+//         setTimeout(()=>{
+//             // resolve("Something went right")
+//             reject("Something went wrong")
+//         },1)
 //     })
-//     console.log(result)
 // }
-// start1()
+// function onSuccess(){
+// // Take advantage of success block
+// }
+// function onError(){
+// // Take advantage of failure block
+// }
+
+// async function start(){
+//     try{
+//     const result=await getData()
+//     // onSuccess()
+//     console.log(result)
+// }catch (error){
+//     // onError()
+//     console.log(`Error ${error}`)
+// }
+// }
+// start()
+
+// // async function start1(){
+// //     const result=await getData()
+// //     .catch(error=>{
+// //         console.log(`Error ${error}`)
+// //     })
+// //     console.log(result)
+// // }
+// // start1()
+
+// Fetch
+
+// const url = "http://worldtimeapi.org/api/timezone/America/New_York"
+
+// async function getData(){
+//     const response = await fetch(url)
+//     const data = await response.json()
+//     console.log(data)
+// }
+ 
+// getData()
+
+//spotify api
+// const url = "http://api.spotify.com/v1/artist/0k17h0D3J5VfsdmQ1iZtE9"
+
+// async function getData(){
+//     const request = new Request(url,{
+//         headers:{
+//             'Authorization':''//generate token to access
+//         }
+//     })
+//     const response = await fetch(url)
+//     const data = await response.json()
+//     console.log(data)
+// }
+ 
+// getData()
+
+
+// const url = "http://api.spotify.com/v1/artist/0k17h0D3J5VfsdmQ1iZtE9"
+// const url = "http://random.v"
+
+// const request = new Request(url,{
+//     headers:{
+//         'Authorization':'Bearer 123'//generate token to access
+//     }
+// })
+// fetch(url)
+// .then(response=>response.json())
+// .then(data=>console.log("Success",data))
+// .catch(error=>console.log(error))
+
+const url = "http://api.spotify.com/v1/artist/0k17h0D3J5VfsdmQ1iZtE9"
+const request = new Request(url,{
+    headers:{
+        'Authorization':''//generate token to access
+    }
+})
+async function getData(){
+    try{
+    const response = await fetch(url)
+    const data = await response.json()
+    if (response.status===200)
+    {
+    console.log("Success ",data)
+    }
+    else{
+        console.log("Server Error ",data.error.message)
+    }
+}catch(error){
+    console.log("Fetch Error",error)
+}
+}
+ 
+getData()
+
+
