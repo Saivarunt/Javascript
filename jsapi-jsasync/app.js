@@ -130,23 +130,110 @@
 
 
 //realworld example
-function fetchData(){
+// function fetchData(){
+//     return new Promise(function(resolve,reject){
+//         fetch('https://api.weather.gov/gridpoints/OKX/35,35/forecast')
+//         .then(response=>response.json())
+//         // .then(data=>resolve(data.properties.periods[1].shortForecast))
+//         .then(data=>reject(data.properties.periods[1].shortForecast))
+//     })
+// }
+
+// //testing 
+// function onError(weather){
+//     console.log(`Error: ${weather}`)
+// }
+
+// function displayData(weather){
+//     console.log(weather)
+// }
+// fetchData()
+// .then(displayData)
+// .catch(onError)
+
+//async await
+// function getData(){
+//     return new Promise(resolve=>{
+//         setTimeout(()=>{
+//             resolve(46)
+//         },1)
+//     })
+// }
+
+// async function start2(){
+//     getData()
+//     .then(result=>{
+//         console.log(result)
+//     })
+// }
+// start2()
+
+// async function start(){
+//     const result=await getData()
+//     console.log(result)
+// }
+// start()
+
+// async function start(){
+//     const data=await fetch('https://api.weather.gov/gridpoints/OKX/35,35/forecast')
+//     const result=await data.json()
+//     console.log(result.properties.periods[0].shortForecast)
+// }
+// start()
+
+// async function start1(){
+//     fetch('https://api.weather.gov/gridpoints/OKX/35,35/forecast')
+//     .then(data=>data.json())
+//     .then(result=>{
+//         console.log(result.properties.periods[0].shortForecast)
+//     })
+    
+// }
+// start1()
+
+
+//Points to note
+// Async await must be used together
+// exceptions: JS modules,chrome dev tools console
+// async/await only affects Promise receiver
+// You can await any function that returns a promise
+// Any function can be converted to async
+// Async functions returns a Promise
+// error handling with try/catch
+
+
+function getData(){
     return new Promise(function(resolve,reject){
-        fetch('https://api.weather.gov/gridpoints/OKX/35,35/forecast')
-        .then(response=>response.json())
-        // .then(data=>resolve(data.properties.periods[1].shortForecast))
-        .then(data=>reject(data.properties.periods[1].shortForecast))
+        setTimeout(()=>{
+            // resolve("Something went right")
+            reject("Something went wrong")
+        },1)
     })
 }
-
-//testing 
-function onError(weather){
-    console.log(`Error: ${weather}`)
+function onSuccess(){
+// Take advantage of success block
+}
+function onError(){
+// Take advantage of failure block
 }
 
-function displayData(weather){
-    console.log(weather)
+async function start(){
+    try{
+    const result=await getData()
+    // onSuccess()
+    console.log(result)
+}catch (error){
+    // onError()
+    console.log(`Error ${error}`)
 }
-fetchData()
-.then(displayData)
-.catch(onError)
+}
+start()
+
+// async function start1(){
+//     const result=await getData()
+//     .catch(error=>{
+//         console.log(`Error ${error}`)
+//     })
+//     console.log(result)
+// }
+// start1()
