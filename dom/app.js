@@ -1,3 +1,5 @@
+// DOM MANIPULATION
+
 //selecting element
 //GetElementById()
 // const title=document.getElementById("main-heading");
