@@ -1,3 +1,4 @@
+// Transition
 let openbtn = document.getElementById('open-btn');
 let modelcontainer = document.getElementById('model-container');
 let closebtn = document.getElementById('close-btn')
