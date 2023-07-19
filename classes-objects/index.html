@@ -6,34 +6,63 @@
     <title>Classes and Objects</title>
 </head>
 <body>
-    <h2 id="title">Classes: Basics</h2>
+    <h2 id="title">Classes and Objects</h2>
     <script type="text/javascript">
         // Instance properties - what they have
         // Instance method - what they do
+        //Basics
 
-        class Rectangle{
-            // set up your object
-            constructor (_width,_height,_color){
-                console.log("The rectangle is being created")
+        // class Rectangle{
+        //     // set up your object
+        //     constructor (_width,_height,_color){
+        //         console.log("The rectangle is being created")
 
-                this.width = _width;
-                this.height = _height;
-                this.color = _color;
-            }
+        //         this.width = _width;
+        //         this.height = _height;
+        //         this.color = _color;
+        //     }
             
-            getArea(){
-                return this.width * this.height
+        //     getArea(){
+        //         return this.width * this.height
+        //     }
+        //     printDescription(){
+        //         console.log(`I am a rectangle of ${this.width} * ${this.height} and I am ${this.color}`)
+        //     }
+        // }
+
+        // let myRectangle1 = new Rectangle(3,5,"blue");
+        // let myRectangle2 = new Rectangle(10,5,"red");
+        // console.log(myRectangle1.getArea())
+        // console.log(myRectangle2.getArea())
+        // myRectangle2.printDescription()
+
+        // Getters and Setters
+        class Square{
+            constructor (_width){
+                this.width = _width;
+                this.height = _width;
+                this.numberOfRequestsForArea = 0;
             }
-            printDescription(){
-                console.log(`I am a rectangle of ${this.width} * ${this.height} and I am ${this.color}`)
+            // Getter
+            get area(){
+                this.numberOfRequestsForArea++;
+                return this.width * this.height;
+            }
+            set area(area){
+                this.width = Math.sqrt(area);
+                this.height = this.width;
             }
         }
 
-        let myRectangle1 = new Rectangle(3,5,"blue");
-        let myRectangle2 = new Rectangle(10,5,"red");
-        console.log(myRectangle1.getArea())
-        console.log(myRectangle2.getArea())
-        myRectangle2.printDescription()
+        let square1 = new Square(4)
+        console.log("Area: ",square1.area)
+        square1.area = 25;
+        console.log("Area: ",square1.area)
+        console.log("Area: ",square1.area)
+        console.log("Area: ",square1.area)
+        console.log("Width: ",square1.width)
+        console.log("Height: ",square1.height)
+        console.log("Number of req: ",square1.numberOfRequestsForArea)
     </script>
 </body>
 </html>
