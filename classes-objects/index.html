@@ -66,23 +66,68 @@
 
         // static methods
         // static methods do not require an instance to work
-        class Square{
-            constructor(_width){
-                this.width = _width
-                this.height = _width
+        // class Square{
+        //     constructor(_width){
+        //         this.width = _width
+        //         this.height = _width
+        //     }
+        //     static equals(a,b){
+        //         return a.width * a.height === b.width * b.height
+        //     }
+        //     static isValidDimensions(w,h){
+        //         return w === h;
+        //     }
+        // }
+
+        // let sq1 = new Square(8);
+        // let sq2 = new Square(8);
+        // console.log(Square.equals(sq1,sq2))
+        // console.log(Square.isValidDimensions(6,7))
+
+        // Inheritance - extends
+        class Person{
+            constructor(_name,_age){
+                this.name = _name
+                this.age = _age
             }
-            static equals(a,b){
-                return a.width * a.height === b.width * b.height
-            }
-            static isValidDimensions(w,h){
-                return w === h;
+            describe(){
+                console.log(`I am ${name} and I am ${age} years old`)
             }
         }
 
-        let sq1 = new Square(8);
-        let sq2 = new Square(8);
-        console.log(Square.equals(sq1,sq2))
-        console.log(Square.isValidDimensions(6,7))
+        class Programmer extends Person{
+            constructor(_name,_age,_yoe){
+                super(_name,_age)
+                // Custom behaviour
+                this.yof = _yoe
+            }
+            code(){
+                console.log(`${this.name} is coding`)
+            }
+        }
+
+        let person1 = new Person('jeff',45)
+        let programmer1 = new Programmer('Dom',56,12)
+
+        programmer1.code()
+
+        console.log(person1)
+        console.log(programmer1)
+
+        const programmers = [
+            new Programmer('sai',21,5),
+            new Programmer('abhi',25,6)
+        ];
+        function developSoftware(programmers) {
+                // for (let p=0;p<programmers.length;p++){
+                //     programmers[p].code()
+                // }
+                for (let p of programmers){
+                    p.code()
+                }
+        }
+
+        developSoftware(programmers)
     </script>
 </body>
 </html>
