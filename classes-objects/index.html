@@ -37,32 +37,52 @@
         // myRectangle2.printDescription()
 
         // Getters and Setters
+        // class Square{
+        //     constructor (_width){
+        //         this.width = _width;
+        //         this.height = _width;
+        //         this.numberOfRequestsForArea = 0;
+        //     }
+        //     // Getter
+        //     get area(){
+        //         this.numberOfRequestsForArea++;
+        //         return this.width * this.height;
+        //     }
+        //     set area(area){
+        //         this.width = Math.sqrt(area);
+        //         this.height = this.width;
+        //     }
+        // }
+
+        // let square1 = new Square(4)
+        // console.log("Area: ",square1.area)
+        // square1.area = 25;
+        // console.log("Area: ",square1.area)
+        // console.log("Area: ",square1.area)
+        // console.log("Area: ",square1.area)
+        // console.log("Width: ",square1.width)
+        // console.log("Height: ",square1.height)
+        // console.log("Number of req: ",square1.numberOfRequestsForArea)
+
+        // static methods
+        // static methods do not require an instance to work
         class Square{
-            constructor (_width){
-                this.width = _width;
-                this.height = _width;
-                this.numberOfRequestsForArea = 0;
+            constructor(_width){
+                this.width = _width
+                this.height = _width
             }
-            // Getter
-            get area(){
-                this.numberOfRequestsForArea++;
-                return this.width * this.height;
+            static equals(a,b){
+                return a.width * a.height === b.width * b.height
             }
-            set area(area){
-                this.width = Math.sqrt(area);
-                this.height = this.width;
+            static isValidDimensions(w,h){
+                return w === h;
             }
         }
 
-        let square1 = new Square(4)
-        console.log("Area: ",square1.area)
-        square1.area = 25;
-        console.log("Area: ",square1.area)
-        console.log("Area: ",square1.area)
-        console.log("Area: ",square1.area)
-        console.log("Width: ",square1.width)
-        console.log("Height: ",square1.height)
-        console.log("Number of req: ",square1.numberOfRequestsForArea)
+        let sq1 = new Square(8);
+        let sq2 = new Square(8);
+        console.log(Square.equals(sq1,sq2))
+        console.log(Square.isValidDimensions(6,7))
     </script>
 </body>
 </html>
