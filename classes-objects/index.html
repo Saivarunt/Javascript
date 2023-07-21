@@ -85,49 +85,74 @@
         // console.log(Square.isValidDimensions(6,7))
 
         // Inheritance - extends
-        class Person{
-            constructor(_name,_age){
-                this.name = _name
-                this.age = _age
+        // class Person{
+        //     constructor(_name,_age){
+        //         this.name = _name
+        //         this.age = _age
+        //     }
+        //     describe(){
+        //         console.log(`I am ${name} and I am ${age} years old`)
+        //     }
+        // }
+
+        // class Programmer extends Person{
+        //     constructor(_name,_age,_yoe){
+        //         super(_name,_age)
+        //         // Custom behaviour
+        //         this.yof = _yoe
+        //     }
+        //     code(){
+        //         console.log(`${this.name} is coding`)
+        //     }
+        // }
+
+        // let person1 = new Person('jeff',45)
+        // let programmer1 = new Programmer('Dom',56,12)
+
+        // programmer1.code()
+
+        // console.log(person1)
+        // console.log(programmer1)
+
+        // const programmers = [
+        //     new Programmer('sai',21,5),
+        //     new Programmer('abhi',25,6)
+        // ];
+        // function developSoftware(programmers) {
+        //         // for (let p=0;p<programmers.length;p++){
+        //         //     programmers[p].code()
+        //         // }
+        //         for (let p of programmers){
+        //             p.code()
+        //         }
+        // }
+
+        // developSoftware(programmers)
+
+        // Polymorphism
+        class Animal{
+            constructor (name){
+                this.name=name;
             }
-            describe(){
-                console.log(`I am ${name} and I am ${age} years old`)
+            makesound(){
+                console.log("Generic animal sound")
             }
         }
 
-        class Programmer extends Person{
-            constructor(_name,_age,_yoe){
-                super(_name,_age)
-                // Custom behaviour
-                this.yof = _yoe
+        class Dog extends Animal{
+            constructor(name){
+                super(name);
             }
-            code(){
-                console.log(`${this.name} is coding`)
+            makesound(){
+                super.makesound()
+                console.log("Woof")
             }
         }
-
-        let person1 = new Person('jeff',45)
-        let programmer1 = new Programmer('Dom',56,12)
-
-        programmer1.code()
-
-        console.log(person1)
-        console.log(programmer1)
-
-        const programmers = [
-            new Programmer('sai',21,5),
-            new Programmer('abhi',25,6)
-        ];
-        function developSoftware(programmers) {
-                // for (let p=0;p<programmers.length;p++){
-                //     programmers[p].code()
-                // }
-                for (let p of programmers){
-                    p.code()
-                }
-        }
-
-        developSoftware(programmers)
+        const a1 = new Animal("Dom")
+        
+        const a2 = new Dog("Jackie")
+        a1.makesound()
+        a2.makesound()
     </script>
 </body>
 </html>
