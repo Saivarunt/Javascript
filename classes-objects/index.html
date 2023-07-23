@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -130,29 +130,51 @@
         // developSoftware(programmers)
 
         // Polymorphism
-        class Animal{
-            constructor (name){
-                this.name=name;
-            }
-            makesound(){
-                console.log("Generic animal sound")
-            }
-        }
+        // class Animal{
+        //     constructor (name){
+        //         this.name=name;
+        //     }
+        //     makesound(){
+        //         console.log("Generic animal sound")
+        //     }
+        // }
 
-        class Dog extends Animal{
-            constructor(name){
-                super(name);
-            }
-            makesound(){
-                super.makesound()
-                console.log("Woof")
-            }
-        }
-        const a1 = new Animal("Dom")
+        // class Dog extends Animal{
+        //     constructor(name){
+        //         super(name);
+        //     }
+        //     makesound(){
+        //         super.makesound()
+        //         console.log("Woof")
+        //     }
+        // }
+        // const a1 = new Animal("Dom")
         
-        const a2 = new Dog("Jackie")
-        a1.makesound()
-        a2.makesound()
+        // const a2 = new Dog("Jackie")
+        // a1.makesound()
+        // a2.makesound()
+    </script>
+</body>
+</html> -->
+
+
+<!-- JS CLASSES IN PRACTICE -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="title">Classes</h2>
+    <ul id="myList">
+    </ul>
+
+    <script src="listbinding.js"></script>
+    <script type="text/javascript">
+        const myList = document.getElementById('myList')
+        const lb = new listBinding(myList)
     </script>
 </body>
 </html>
