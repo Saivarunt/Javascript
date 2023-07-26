@@ -280,6 +280,7 @@
 // .then(data=>console.log("Success",data))
 // .catch(error=>console.log(error))
 
+//API
 const url = "http://api.spotify.com/v1/artist/0k17h0D3J5VfsdmQ1iZtE9"
 const request = new Request(url,{
     headers:{
