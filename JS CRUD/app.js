@@ -1,3 +1,5 @@
+// CRUD
+// https://reqres.in/api/users -opensource api to test functionality 
 let inp = document.getElementById('inp')
 let getbtn = document.getElementById('get')
 let postbtn = document.getElementById('post')
@@ -5,7 +7,7 @@ let putbtn = document.getElementById('put')
 let deletebtn = document.getElementById('delete')
 let container = document.querySelector('.container')
 
-
+// GET
 getbtn.addEventListener("click",()=>{
     fetch("https://reqres.in/api/users",{
         method:"GET",
@@ -23,6 +25,7 @@ getbtn.addEventListener("click",()=>{
     })
 })
 
+// POST
 postbtn.addEventListener("click",()=>{
     fetch("https://reqres.in/api/users",{
         method:"POST",
@@ -44,6 +47,7 @@ postbtn.addEventListener("click",()=>{
     })
 })
 
+// PUT
 putbtn.addEventListener("click",async()=>{
     await fetch("https://reqres.in/api/users/1",{
         method:"PUT",
@@ -81,6 +85,7 @@ putbtn.addEventListener("click",async()=>{
     })
 })
 
+// DELETE
 deletebtn.addEventListener("click",async()=>{
     await fetch("https://reqres.in/api/users/"+inp.value,{
         method:"DELETE"
